@@ -16,9 +16,18 @@ z: 0.35
 
 
 function creerRobotPrincipal(cote){
+
+
 	var posx = {"gauche":-1.5+0.125+0.07,"droit":1.5-0.125-0.07};
 	
-    var geo = new THREE.BoxGeometry(0.25,0.35,0.35);
+	var geo;
+
+	if(cote==="droit"){
+		geo = new THREE.CylinderGeometry( RAYON_ENNEMIS_GRANDS,RAYON_ENNEMIS_GRANDS,0.35,25);
+	}
+	else{
+		geo = new THREE.BoxGeometry(0.25,0.35,0.35);
+	}
 
 
     var boxMat;
@@ -99,7 +108,23 @@ function creerRobotPrincipal(cote){
 
 function creerRobotSecondaire(cote){
 	var posx = {"gauche":-1.5+0.125+0.07+0.25,"droit":1.5-0.125-0.07-0.25};
-	var geo = new THREE.BoxGeometry(0.15,0.35,0.20);
+
+
+
+
+	if(cote==="droit"){
+		geo = new THREE.CylinderGeometry( RAYON_ENNEMIS_PETITS,RAYON_ENNEMIS_PETITS,0.35,25);
+	}
+	else{
+		var geo = new THREE.BoxGeometry(0.15,0.35,0.20);
+	}
+
+
+
+
+
+
+
   	var boxMat;
 
   	if(cote==="gauche"){
@@ -555,8 +580,11 @@ function deroulerTapis(){
 
 
 
-
+/*
 function combinerPopcornGobelet(gob)
 {
-	
-}
+	for(var i=0;i<this.objtenus.nombre;i++)
+	{
+		if(this.objtenus[i])
+	}
+}*/

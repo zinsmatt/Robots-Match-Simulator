@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+        <title>3D</title>
+        <style type = "text/css">
+            #container{
+                position: absolute;
+                top : 50;
+                left :0;
+                right :0;
+                bottom :0;
+                z-index :5;
+                height: 75%;
+            }
+            body{
+                margin: 0;
+                padding : 0;
+                overflow : hidden;
+                font-family: Monospace;
+                color: red;
+            }
+            .cmd{
+                width:80px;
+                height:40px;
+            }
+        </style>
+
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/isotope.css" media="screen" />
+        <link rel="stylesheet" href="../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/bootstrap-theme.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- skin -->
+        <link rel="stylesheet" href="../skin/default.css">
+        <link rel="stylesheet" href="../css/carousel.css">
+        <link rel="stylesheet" href="../css/animate.css">
+        <link rel="stylesheet" href="../css/perso.css">
+
+    </head>
+    <body>
+
+
+
+      <!--  <script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>-->
+        <div class="simulateur">
+        <div id="simu"></div>
+
+
+          <div class="container">
+
+
+            <div class="row">
+
+                  <div class="col-md-8">
+
+
+                      <div class="thumbnail">
+                                <form name="formulaire">
+                                    <div class="row">
+                                    <div class="col-md-2"><input type="radio" name="selectRobot" id="selectRobot" value="1" style="width:25px;height:25px" checked>Left big Robot</div>
+                                    <div class="col-md-2"><input type="radio" name="selectRobot" id="selectRobot" value="2" style="width:25px;height:25px">Left little Robot</div>
+                                    <div class="col-md-2"><input type="radio" name="selectRobot" id="selectRobot" value="4" style="width:25px;height:25px">Right little Robot</div>
+                                    <div class="col-md-2"><input type="radio" name="selectRobot" id="selectRobot" value="3" style="width:25px;height:25px">Right big Robot</div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <table cellpadding="30">
+                                            <tr>
+                                                <td></td>
+                                                <td><input class="cmd" type="button" value="Forward" onClick="commande('avancer')"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td> <input class="cmd" type="button" value="Left" onClick="commande('tournerGauche')"></td>
+                                                <td> <input class="cmd" type="button" value="Back" onClick="commande('reculer')"></td>
+                                                <td> <input class="cmd" type="button" value="Right" onClick="commande('tournerDroite')"></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <table cellspacing="10">
+                                            <tr>
+                                                <td><input class="cmd" type="button" value="Take" onClick="commande('prendreObjet')"></td>
+                                                <td> <input class="cmd" type="button" value="Popcorn" onClick="commande('prendrePopcorn')"> </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <input class="cmd" type="button" value="Drop off" onClick="commande('deposerObjet')"></td>
+                                                <td> <input class="cmd" type="button" value="Close" onClick="commande('fermerClapet')"></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </form>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="thumbnail">
+                          <h2 >Simulator</h2>
+                        Click on buttons to send orders to a robot
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+
+
+        <script src="js/three.min.js"></script>
+        <script src="js/OrbitControls.js"></script>
+        <script src="js/ColladaLoader.js"></script>
+        <script src="js/loader.js"></script>
+        <script src="clapets.js"></script>
+        <script src="distributeurs.js"></script>
+        <script src="pieds.js"></script>
+        <script src="gobelets.js"></script>
+        <script src="ampoules.js"></script>
+        <script src="robots.js"></script>
+        <script src="main.js"></script>
+
+    </body>
+
+</html>

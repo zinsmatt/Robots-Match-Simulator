@@ -1,3 +1,9 @@
+
+RAYON_ENNEMIS_PETITS = 0.0875;
+RAYON_ENNEMIS_GRANDS = 0.15;
+
+
+
 //permet de redimensionner la fenetre
 window.addEventListener('resize', function() {
     var WIDTH = window.innerWidth*1,
@@ -7,7 +13,7 @@ window.addEventListener('resize', function() {
     camera.updateProjectionMatrix();
 });
 
-var container = document.getElementById("container");
+var container = document.getElementById("simu");
 
 var scene= new THREE.Scene();
 
@@ -54,7 +60,7 @@ directionLight.intensity4 = 0.5;
 scene.add(directionLight4);
 
 
-var axisHelper = new THREE.AxisHelper( 5 ); scene.add( axisHelper );
+//var axisHelper = new THREE.AxisHelper( 5 ); scene.add( axisHelper );
 
 //charge le plateau
 var plateau;
@@ -176,6 +182,7 @@ var rob;
 
 function render(){
 
+
     requestAnimationFrame(render);
     if(fermeture)
         for(var i=0;i<=5;i++)
@@ -252,6 +259,7 @@ function render(){
 }
 
 render();
+
 
 
 
@@ -358,6 +366,19 @@ console.log(scene.children);
 
 
 
+/*
+
+
+function export(){
+
+	console.log("EXPORT : " + scene);
+
+
+
+
+}
+*/
+
 
 
 /* 
@@ -369,4 +390,12 @@ faire un simulateur uniquement pour l'affichage
 - un devant un derriere
 
 
+
+
+
+
 */
+
+
+
+
